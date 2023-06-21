@@ -4,6 +4,10 @@ Sum.in.ua site parser. Ukrainian dictionary.
 
 ## Usage
 
+```bash
+npm install --save sum11
+```
+
 JavaScript:
 
 ```js
@@ -19,7 +23,7 @@ console.log(article.alternatives);
 // Output: ["кіт", "кит"]
 ```
 
-TypeSctipt:
+TypeScript:
 
 ```ts
 import { getExplanation } from 'sum11';
