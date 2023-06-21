@@ -1,5 +1,6 @@
 # artifacts
 /dist
+/dist.browser
 
 # dependencies
 /node_modules
