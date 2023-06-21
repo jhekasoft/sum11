@@ -3,8 +3,8 @@
     "module": "esnext",
     "target": "es2015",
     "moduleResolution": "node",
-    "declaration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "declaration": true
   },
   "include": [
     "src/**/*"

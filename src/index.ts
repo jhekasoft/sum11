@@ -41,3 +41,5 @@ export async function getExplanation(keyword: string): Promise<Article | null> {
 
   return result;
 }
+
+export { Article } from './interfaces/Article';

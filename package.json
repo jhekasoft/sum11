@@ -1,14 +1,22 @@
 {
   "name": "sum11",
-  "version": "0.1.1",
+  "version": "0.1.7",
   "description": "Sum.in.ua site parser. Ukrainian dictionary",
+  "homepage": "https://github.com/jhekasoft/sum11",
+  "bugs": "https://github.com/jhekasoft/sum11/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhekasoft/sum11"
+  },
   "main": "dest/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "dist",
+    "dist.browser"
   ],
+  "browser": "dist.browser/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc -p tsconfig.browser.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
