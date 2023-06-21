@@ -1,0 +1,29 @@
+{
+  "name": "sum11",
+  "version": "0.1.1",
+  "description": "Sum.in.ua site parser. Ukrainian dictionary",
+  "main": "dest/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sum11",
+    "sum",
+    "ukrainian",
+    "dictionary",
+    "ukrainian",
+    "dictionary",
+    "sum.in.ua"
+  ],
+  "author": "Eugene Efremov (jhekasoft)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "node-html-parser": "^6.1.5"
+  }
+}
