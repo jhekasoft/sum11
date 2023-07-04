@@ -1,6 +1,7 @@
 # artifacts
 /dist
 /dist.browser
+*.tgz
 
 # dependencies
 /node_modules
