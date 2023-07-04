@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { parse } from 'node-html-parser';
+import { parse, valid } from 'node-html-parser';
 import { Article } from './interfaces/Article';
 
 export async function getExplanation(keyword: string): Promise<Article | null> {
@@ -8,8 +8,7 @@ export async function getExplanation(keyword: string): Promise<Article | null> {
   .then((response) => {
     // TODO: improve type definition
     const content: string = response.data
-
-    const root = parse(content)
+    const root = parse(content, { parseNoneClosedTags: true })
 
     // Parse article
     const articleEl = root.querySelector('[itemprop=articleBody]')
