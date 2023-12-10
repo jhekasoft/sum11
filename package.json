@@ -17,7 +17,8 @@
   "browser": "dist.browser/index.js",
   "scripts": {
     "build": "tsc && tsc -p tsconfig.browser.json",
-    "test": "jest"
+    "test": "jest",
+    "publish": "test && build && npm publish"
   },
   "keywords": [
     "sum11",
