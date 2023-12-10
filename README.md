@@ -21,6 +21,8 @@ console.log(article.text);
 // Output: КІТ, кота, чол. Свійська тварина родини котячих...
 console.log(article.alternatives);
 // Output: ["кіт", "кит"]
+console.log(article.url);
+// Output: https://sum.in.ua/s/kit
 ```
 
 TypeScript:
@@ -36,4 +38,6 @@ console.log(article?.text);
 // Output: КІТ, кота, чол. Свійська тварина родини котячих...
 console.log(article?.alternatives);
 // Output: ["кіт", "кит"]
+console.log(article.url);
+// Output: https://sum.in.ua/s/kit
 ```

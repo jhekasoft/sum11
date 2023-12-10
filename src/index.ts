@@ -4,8 +4,16 @@ import { Article } from './interfaces/Article';
 
 export async function getExplanation(keyword: string): Promise<Article | null> {
   const result = await axios
-  .get(encodeURI(`http://sum.in.ua/?swrd=${keyword}`))
+  .post(`http://sum.in.ua/search`, {
+    query: keyword
+  }, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
   .then((response) => {
+    const redirectUrl = response.request.res.responseUrl as string;
+
     // TODO: improve type definition
     const content: string = response.data
     const root = parse(content, { parseNoneClosedTags: true })
@@ -17,7 +25,8 @@ export async function getExplanation(keyword: string): Promise<Article | null> {
 
       return {
         title: titleEl?.innerText,
-        text: articleEl.structuredText
+        text: articleEl.structuredText,
+        url: redirectUrl
       } as Article
     }
 
@@ -26,7 +35,8 @@ export async function getExplanation(keyword: string): Promise<Article | null> {
     if (alternativesEL && alternativesEL.childNodes.length > 0) {
       const alternatives = alternativesEL.childNodes.map(n => n.text)
       return {
-        alternatives
+        alternatives,
+        url: redirectUrl
       } as Article
     }
 
