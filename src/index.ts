@@ -12,7 +12,7 @@ export async function getExplanation(keyword: string): Promise<Article | null> {
     }
   })
   .then((response) => {
-    const redirectUrl = response.request.res.responseUrl as string;
+    const redirectUrl = response?.request?.res?.responseUrl as string || "";
 
     // TODO: improve type definition
     const content: string = response.data
