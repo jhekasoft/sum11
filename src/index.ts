@@ -4,7 +4,7 @@ import { Article } from './interfaces/Article';
 
 export async function getExplanation(keyword: string): Promise<Article | null> {
   const result = await axios
-  .post(`http://sum.in.ua/search`, {
+  .post(`https://sum.in.ua/search`, {
     query: keyword
   }, {
     headers: {
@@ -12,7 +12,7 @@ export async function getExplanation(keyword: string): Promise<Article | null> {
     }
   })
   .then((response) => {
-    const redirectUrl = response?.request?.res?.responseUrl as string || "";
+    const redirectUrl = (response?.request?.res?.responseUrl ?? '') as string;
 
     // TODO: improve type definition
     const content: string = response.data
