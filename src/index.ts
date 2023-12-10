@@ -3,7 +3,7 @@ import { parse, valid } from 'node-html-parser';
 import { Article } from './interfaces/Article';
 
 export async function getExplanation(keyword: string): Promise<Article | null> {
-  const result = await axios
+  const result = axios
   .post(`https://sum.in.ua/search`, {
     query: keyword
   }, {
@@ -31,9 +31,9 @@ export async function getExplanation(keyword: string): Promise<Article | null> {
     }
 
     // Parse alternatives
-    const alternativesEL = root.querySelector('#search-res ul')
-    if (alternativesEL && alternativesEL.childNodes.length > 0) {
-      const alternatives = alternativesEL.childNodes.map(n => n.text)
+    const alternativesEl = root.querySelector('#search-res ul')
+    if (alternativesEl && alternativesEl.childNodes.length > 0) {
+      const alternatives = alternativesEl.childNodes.map(n => n.text)
       return {
         alternatives,
         url: redirectUrl
@@ -43,9 +43,7 @@ export async function getExplanation(keyword: string): Promise<Article | null> {
     return null
   })
   .catch(function (error) {
-    console.log(error);
-
-    return null;
+    return Promise.reject(error);
   });
 
   return result;
