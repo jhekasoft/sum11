@@ -1,7 +1,7 @@
 {
   "name": "sum11",
-  "version": "0.4.0",
-  "description": "Sum.in.ua site parser. Ukrainian dictionary",
+  "version": "0.5.0",
+  "description": "Sum.in.ua, sum11.pp.ua sites parser. Ukrainian dictionary",
   "homepage": "https://github.com/jhekasoft/sum11",
   "bugs": "https://github.com/jhekasoft/sum11/issues",
   "repository": {
@@ -23,8 +23,6 @@
   "keywords": [
     "sum11",
     "sum",
-    "ukrainian",
-    "dictionary",
     "ukrainian",
     "dictionary",
     "sum.in.ua"

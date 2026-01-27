@@ -42,7 +42,7 @@ console.log(article.url);
 // Output: https://sum.in.ua/s/kit
 ```
 
-Set another vocabulary API:
+Set another dictionary API:
 
 ```ts
 import { Article, getExplanation, setConfig, ServiceType } from "sum11"
