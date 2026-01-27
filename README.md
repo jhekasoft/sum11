@@ -8,7 +8,7 @@ Sum.in.ua site parser. Ukrainian dictionary.
 npm install --save sum11
 ```
 
-JavaScript:
+### JavaScript
 
 ```js
 import { Article, getExplanation } from 'sum11';
@@ -25,7 +25,7 @@ console.log(article.url);
 // Output: https://sum.in.ua/s/kit
 ```
 
-TypeScript:
+### TypeScript
 
 ```ts
 import { getExplanation } from 'sum11';
@@ -40,4 +40,28 @@ console.log(article?.alternatives);
 // Output: ["кіт", "кит"]
 console.log(article.url);
 // Output: https://sum.in.ua/s/kit
+```
+
+Set another vocabulary API:
+
+```ts
+import { Article, getExplanation, setConfig, ServiceType } from "sum11"
+
+setConfig({
+  type: ServiceType.SumInUa
+})
+
+const article = await getExplanation(keyword);
+```
+
+There are two API now in `ServiceType`:
+- `SumJhekasoft` (`"sum_jhekasoft"`);
+- `SumInUa` (`"sum_in_ua"`).
+
+
+### Tests
+Run tests:
+
+```bash
+npm test
 ```

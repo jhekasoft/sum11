@@ -13,10 +13,10 @@ export function setConfig(cfg: Config): boolean {
 
 export async function getExplanation(keyword: string): Promise<Article | null> {
   switch (config.type) {
-    case ServiceType.SumJhekasoft:
-      return getSumJhekasoftExplanation(keyword)
-    default:
+    case ServiceType.SumInUa:
       return getSumInUaExplanation(keyword)
+    default:
+      return getSumJhekasoftExplanation(keyword)
   }
 }
 
@@ -70,7 +70,7 @@ async function getSumInUaExplanation(keyword: string): Promise<Article | null> {
 }
 
 async function getSumJhekasoftExplanation(keyword: string): Promise<Article | null> {
-  const baseUrl = config.baseUrl ?? "https://sum.jhekasoft.lol/"
+  const baseUrl = config.baseUrl ?? "https://api.sum11.pp.ua/"
 
   const result = axios
   .get(`${baseUrl}sum/articles/${keyword}`)
@@ -85,13 +85,13 @@ async function getSumJhekasoftExplanation(keyword: string): Promise<Article | nu
       return {
         title: article.Data.Word ?? "",
         text: article.Data.Desc ?? "",
-        url: ""
+        url: `${baseUrl}sum/articles/${keyword}`
       } as Article
     }
 
     return {
       alternatives: article.Alternatives,
-      url: ""
+      url: `${baseUrl}sum/articles/${keyword}`
     } as Article
   })
   .catch(function (error) {
