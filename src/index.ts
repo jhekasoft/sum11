@@ -85,7 +85,7 @@ async function getSumJhekasoftExplanation(keyword: string): Promise<Article | nu
       return {
         title: article.Data.Word ?? "",
         text: article.Data.Desc ?? "",
-        url: `${baseUrl}sum/articles/${keyword}`
+        url: `${baseUrl}sum/articles/${keyword}?site-redirect=true`
       } as Article
     }
 
