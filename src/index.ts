@@ -91,7 +91,7 @@ async function getSumJhekasoftExplanation(keyword: string): Promise<Article | nu
 
     return {
       alternatives: article.Alternatives,
-      url: `${baseUrl}sum/articles/${keyword}`
+      url: `${baseUrl}sum/articles/${keyword}?site-redirect=true`
     } as Article
   })
   .catch(function (error) {
